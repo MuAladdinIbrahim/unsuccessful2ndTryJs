@@ -2,7 +2,7 @@ function validateForm() {
     if (!document.getElementById("fn").value.match(/^[a-zA-Z]+$/) ||
         !document.getElementById("ln").value.match(/^[a-zA-Z]+$/) ||
         !document.getElementById("uni").value.match(/^[a-zA-Z]+$/)||
-        !document.getElementById("cls").value.match(/^[a-zA-Z]+$/)) {
+        !document.getElementById("cls").value.match(/^[0-9a-zA-Z]+$/)) {
         alert("insert a valid information");
     }
     else {
