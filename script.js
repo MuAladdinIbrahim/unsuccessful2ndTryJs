@@ -1,7 +1,7 @@
 function validateForm() {
     if (!document.getElementById("fn").value.match(/^[a-zA-Z]+$/) ||
         !document.getElementById("ln").value.match(/^[a-zA-Z]+$/) ||
-        !document.getElementById("uni").value.match(/^[a-zA-Z]+$/)||
+        !document.getElementById("uni").value.match(/^[a-zA-Z]+$/) ||
         !document.getElementById("cls").value.match(/^[0-9a-zA-Z]+$/)) {
         alert("insert a valid information");
     }
@@ -24,7 +24,7 @@ var allQuestions = [
     ["<h4>What is the type of 'NaN'? <br> use console.log(type of NaN === \"__\"); to check it.</h4>", "string", "boolean", "number", "C"]
 ];
 var fiveQuestions = [];
-for (var i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++) {
     var index = Math.floor(Math.random() * allQuestions.length);
     fiveQuestions.push(allQuestions[index]);
     allQuestions.splice(index, 1);
