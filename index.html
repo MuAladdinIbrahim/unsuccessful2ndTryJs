@@ -7,16 +7,28 @@
 </head>
 
 <body>
-    <!-- <div id="ques"></div> -->
-    <div id="container">
+    <form id="form" onsubmit="return event.preventDefault(), validateForm();" method="post">
+        First Name: <input value="" id="fn" type="text" name="fname" required>
+        Last Name: <input type="text" value="" id="ln" name="lname" required> <br><br>
+        School/Uni: <input type="text" value="" id="uni" name="uni" required>
+        Class: <input type="text" value="" id="cls"  name="class" required><br><br>
+        <input type="radio" name="gender" value="male" required> Male
+        <input type="radio" name="gender" value="female"required> Female<br><br>
+        <input type="submit" value="Submit">
+    </form> 
+
+
+    <div id="ques"></div>
+
+    <!-- <div id="container">
         <div id="q"></div><br>
         <button type=radio id='buttonA' value='A' onclick='validateA()' name='choices'></button><br><br>
         <button type=radio id='buttonB' value='B' onclick='validateB()' name='choices'></button><br><br>
         <button type=radio id='buttonC' value='C' onclick='validateC()' name='choices'></button><br><br>
-        <!-- <button type=radio id='skip' value='skip' onclick='skip()' name='choices'>SKIP</button> -->
+        <button type=radio id='skip' value='skip' onclick='skip()' name='choices'>SKIP</button>
         <button type=radio id='fin' value='fin' onclick='finish()' name='choices'>FINISH Quiz</button><br><br>
         <div id="score"></div>
-    </div>
+    </div> -->
     <script src="script.js"></script>
 </body>
 

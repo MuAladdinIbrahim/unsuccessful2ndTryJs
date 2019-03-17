@@ -1,8 +1,9 @@
-#ques {
-    margin-top: 10%; 
+body{
     text-align: center;
 }
+/* #ques {
+    margin-top: 10%; 
+} */
 #container {
-    text-align: center;
     margin-top: 10%; 
 }

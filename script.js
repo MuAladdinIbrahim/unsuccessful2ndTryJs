@@ -1,4 +1,16 @@
-//var questions
+function validateForm() {
+    if (!document.getElementById("fn").value.match(/^[a-zA-Z]+$/) ||
+        !document.getElementById("ln").value.match(/^[a-zA-Z]+$/) ||
+        !document.getElementById("uni").value.match(/^[a-zA-Z]+$/)||
+        !document.getElementById("cls").value.match(/^[a-zA-Z]+$/)) {
+        alert("insert a valid information");
+    }
+    else {
+        question();
+        form.style.visibility = 'hidden';
+    }
+}
+
 var allQuestions = [
     ["<h4>What is JavaScript?</h4>", "Another name for Java", "A scripting language mostly for the web", "When you use Java without compiling", "B"],
     ["<h4>For what JavaScript is used?</h4>", "frontend", "backend", "both", "C"],
@@ -27,14 +39,22 @@ function question() {
     var ans3 = fiveQuestions[randomIndex][3];
     correct = fiveQuestions[randomIndex][4];
 
-    document.getElementById("q").innerHTML = q;
-    document.getElementById("buttonA").innerHTML = ans1;
-    document.getElementById("buttonB").innerHTML = ans2;
-    document.getElementById("buttonC").innerHTML = ans3;
+    // document.getElementById("q").innerHTML = q;
+    // document.getElementById("buttonA").innerHTML = ans1;
+    // document.getElementById("buttonB").innerHTML = ans2;
+    // document.getElementById("buttonC").innerHTML = ans3;
+
+    var ques = document.getElementById("ques");
+    ques.innerHTML = "<div>" + q + "</div><br>";
+    ques.innerHTML += "<button id='button' onclick ='validateA()'>" + ans1 + "</button><br><br>";
+    ques.innerHTML += "<button id='button' onclick ='validateB()'>" + ans2 + "</button><br><br>";
+    ques.innerHTML += "<button id='button' onclick ='validateC()'>" + ans3 + "</button><br><br>";
+    // ques.innerHTML +="<button type=radio id='skip' onclick='skip()'>SKIP</button>";
+    ques.innerHTML += "<button type=radio id='fin'  onclick='finish()'>FINISH Quiz</button><br><br>";
+    ques.innerHTML += "<div id='score'></div>";
 
     fiveQuestions.splice(randomIndex, 1);
 }
-question();
 
 var score = 0;
 function validateA() {
@@ -88,11 +108,4 @@ function finish() {
     // }
 }
 
-
-//another way to write html instead in html file __ unused 
-//  var ques = document.getElementById("ques");
-//     ques.innerHTML = "<div>" + q + "</div><br>";
-//     ques.innerHTML += "<button id='button' value = '\"A\"' onclick ='validateA()'  name='choices'>" + ans1 + "</button><br>";
-//     ques.innerHTML += "<button id='button' value = '\"B\"' onclick ='validateB()'  name='choices'>" + ans2 + "</button><br>";
-//     ques.innerHTML += "<button id='button' value = '\"C\"' onclick ='validateC()'  name='choices'>" + ans3 + "</button>";
 
